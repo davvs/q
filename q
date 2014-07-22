@@ -1,4 +1,5 @@
 #!/bin/bash
+Q_HOME=$(dirname $(which q))
 STARTED=$(date +%s)
 $*
 if [ $? -eq 0 ];
@@ -15,6 +16,6 @@ TIMETAKEN=$(( $COMPLETED - $STARTED ))
 
 if [[ $TIMETAKEN -gt $THRESHOLD ]];
 then
-    aplay -q ~/sounds/noise.wav &
+    aplay -q $Q_HOME/noise.wav &
     tell $RESULT: $*
 fi

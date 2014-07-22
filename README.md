@@ -21,8 +21,8 @@ When running large batch scripts that takes a long time I always seem to forget 
 
 ```
 git clone git@github.com:davvs/q.git
-PATH+=$PWD/q
 ln -s ~/path/to/some/noise.wav q/noise.wav
+PATH=$PWD/q:$PATH
 ```
 
 ## API Reference
