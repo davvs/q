@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ $(which notify-send 2> /dev/null) ];
 then
-    notify-send 'q command done' $@ --icon=dialog-information
+    notify-send 'q command done' "$*" --icon=dialog-information
 elif [ $(which osd_cat 2> /dev/null) ];
 then
     killall osd_cat 2> /dev/null
