@@ -1,0 +1,8 @@
+#!/bin/bash
+killall osd_cat 2> /dev/null
+for col in $(echo "yellow"); do
+  echo "$@" | \
+     osd_cat --font="-b&h-lucida-medium-r-normal-*-34-*-*-*-*-*-iso8859-15"  \
+     --shadow=2 --pos=top --align=center --colour=$col --delay=4 &
+     sleep 0.5s
+done
