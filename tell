@@ -11,4 +11,6 @@ then
          --shadow=2 --pos=top --align=center --colour=$col --delay=4 &
          sleep 0.5s
     done
+else
+    echo "No suitable executable found for showing the notification"
 fi
