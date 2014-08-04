@@ -2,6 +2,9 @@
 if [ $(which notify-send 2> /dev/null) ];
 then
     notify-send 'q command done' "$*" --icon=dialog-information
+elif [ $(which osascript 2> /dev/null) ];
+then
+    osascript -e "display notification \"$*\" with title \"COMPLETED\""
 elif [ $(which osd_cat 2> /dev/null) ];
 then
     killall osd_cat 2> /dev/null
