@@ -13,6 +13,14 @@ q sleep 15
 
 (After that sleep 15 is executed, a verybose screen popup is shown in the screen and noises are played)
 
+
+```
+sleep 10 &
+[1] 15951
+q -p 15951
+```
+(Watch the process 15951 until it exits and then prints a verbose message to the user)
+
 ## Motivation
 
 When running large batch scripts that takes a long time I always seem to forget to get back and check if they're done. q helps me to remind me that they're completed.
