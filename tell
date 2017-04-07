@@ -15,5 +15,6 @@ then
          sleep 0.5s
     done
 else
-    echo "No suitable executable found for showing the notification"
+    echo "No suitable executable found for showing the notification. Try installing libnotify-bin"
 fi
+
