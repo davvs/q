@@ -24,7 +24,16 @@ play_sound() {
     $SOUND_EXECUTABLE $SOUND_EXECUTABLE_FLAGS $Q_HOME/noise.wav &
 }
 
-usage() { echo "Usage: $0 [--test] [-p <pid>] [-s] [-o] <command>" 1>&2; exit 1; }
+usage() { echo -e "Usage: $0 [-t] [-p <pid>] [-s] [-o] <command>" \
+  "\n  -s always show the command on the display, disregarding how long time it took" \
+  "\n  -o When the command is finished, show the output of the" \
+  "\n     command rather than the command line" \
+  "\n  -q Don't play a sound when the command is finished" \
+  "\n  -p <pid> Wait for the process with <pid> to finsh" \
+  "\n  -t tests the configuration of q and all dependencies"
+              "\n" \
+              1>&2; exit 1; }
+
 
 while getopts "qtsop:" opt; do
     case "${opt}" in
